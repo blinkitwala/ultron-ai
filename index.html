@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08090d" />
+  <meta name="description" content="Ultron AI — a futuristic assistant interface." />
+  <title>Ultron AI</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true"><span>U</span></div>
+        <div class="brand-name">ULTRON<span>AI</span></div>
+        <button class="icon-btn sidebar-close" id="closeSidebar" aria-label="Close sidebar">×</button>
+      </div>
+      <button class="new-chat-btn" id="newChat"><span class="plus">＋</span> New chat <kbd>Ctrl K</kbd></button>
+      <div class="sidebar-label">Workspace</div>
+      <button class="nav-item active" id="homeBtn"><span class="nav-icon">⌂</span> Assistant</button>
+      <button class="nav-item" id="voiceBtn"><span class="nav-icon">◉</span> Voice mode <span class="nav-dot"></span></button>
+      <div class="history-head"><span class="sidebar-label">Recent chats</span><button class="icon-btn tiny" id="clearHistory" title="Clear history">···</button></div>
+      <div class="history-list" id="historyList"></div>
+      <div class="sidebar-bottom">
+        <div class="status-line"><span class="status-pulse"></span><span>Interface online</span></div>
+        <div class="profile"><div class="profile-avatar">U</div><div class="profile-info"><strong>Ultron AI</strong><span>Web preview · Demo mode</span></div><button class="icon-btn tiny" id="settingsBtn" title="About">⚙</button></div>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" id="backdrop"></div>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="topbar-title"><span class="mini-mark">U</span><span>Ultron <span class="muted">/ Assistant</span></span></div>
+        <div class="topbar-right"><span class="mode-pill"><span class="status-pulse"></span> Demo mode</span><button class="icon-btn" id="topNewChat" title="New chat">＋</button></div>
+      </header>
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="core-wrap"><div class="core-ring ring-one"></div><div class="core-ring ring-two"></div><div class="core-ring ring-three"></div><div class="core-glow"></div><div class="core-logo">U</div><div class="orbit-dot dot-one"></div><div class="orbit-dot dot-two"></div></div>
+          <div class="eyebrow"><span class="status-pulse"></span> SYSTEM INITIALIZED</div>
+          <h1>How can I help<br/><span>you today?</span></h1>
+          <p class="welcome-sub">Your intelligent interface for ideas, questions and creation.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Help me plan a creative project"><span class="suggestion-icon">✦</span><span><strong>Plan a project</strong><small>Turn an idea into clear steps</small></span><span class="arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Explain artificial intelligence simply"><span class="suggestion-icon">⌘</span><span><strong>Learn something</strong><small>Understand a topic step by step</small></span><span class="arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Give me ideas for a futuristic app"><span class="suggestion-icon">◇</span><span><strong>Brainstorm ideas</strong><small>Explore something new</small></span><span class="arrow">↗</span></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+      <div class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" placeholder="Message Ultron..." aria-label="Message Ultron"></textarea>
+          <div class="composer-actions"><div class="composer-hint"><span>↵</span> to send · <span>Shift ↵</span> new line</div><div class="action-buttons"><button type="button" class="icon-btn voice-btn" id="micBtn" title="Voice input">♩</button><button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">↑</button></div></div>
+        </form>
+        <div class="disclaimer">Ultron AI Web · Preview interface. Responses are simulated; AI service is not connected yet.</div>
+      </div>
+    </main>
+  </div>
+  <dialog id="aboutDialog"><div class="dialog-content"><button class="icon-btn dialog-close" id="dialogClose">×</button><div class="dialog-logo">U</div><h2>Ultron AI</h2><p>This web interface is a preview. Connect a secure server-side AI service to enable real AI responses.</p><div class="dialog-note">Never place private API keys in browser code.</div><button class="primary-btn" id="dialogOk">Got it</button></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
